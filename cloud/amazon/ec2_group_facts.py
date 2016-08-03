@@ -230,8 +230,8 @@ def list_ec2_groups(connection, module):
 
     # turn the boto3 result into ansible friendly tag dictionary
     for group in snaked_groups:
-        if 'tags' in group:
-            group['tags'] = boto3_tag_list_to_ansible_dict(group['tags'])
+        if 'Tags' in group:
+            group['Tags'] = boto3_tag_list_to_ansible_dict(group['Tags'])
 
     module.exit_json(security_groups=snaked_groups)
 
